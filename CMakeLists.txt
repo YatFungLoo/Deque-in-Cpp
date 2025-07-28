@@ -23,7 +23,6 @@ project(
 ### Source path ###
 set(SOURCES
   src/main.cpp
-  src/deque.cpp
 )
 
 ### Executable statement ###
@@ -52,7 +51,6 @@ enable_testing()
 add_executable(
   Deque_test
   src/deque_test.cpp
-  src/deque.cpp
 )
 target_link_libraries(
   Deque_test

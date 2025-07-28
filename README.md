@@ -1,5 +1,5 @@
-# C-Cpp-cmake-with-ninja-and-gtest-template
-Simple C/C++ cmake with ninja project template to reuse for new project
+# Deque (Deck) in C++
+Simple doubly-linked list implemenation in C++.
 
 ## To run the code
 

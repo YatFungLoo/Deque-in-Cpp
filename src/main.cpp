@@ -1,7 +1,3 @@
-#include "header.hpp"
-#include <cassert>
+#include "deque.hpp"
 
-int main() {
-    Example myExample;
-    myExample.Print();
-}
+int main() {}

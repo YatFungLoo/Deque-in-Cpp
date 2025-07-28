@@ -14,16 +14,16 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEX2" CACHE STRING "Set C++ Compiler F
 
 ### Project statement ###
 project(
-  Example
+  Deque
   VERSION 1.0
   # LANGUAGE CXX
-  # DESCRIPTION "Example C++"
+  # DESCRIPTION "Deque C++"
 )
 
 ### Source path ###
 set(SOURCES
   src/main.cpp
-  src/header.cpp
+  src/deque.cpp
 )
 
 ### Executable statement ###
@@ -50,15 +50,15 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  Default_test
-  src/header.cpp
+  Deque_test
+  src/deque_test.cpp
+  src/deque.cpp
 )
 target_link_libraries(
-  Default_test
+  Deque_test
   GTest::gtest_main
 )
-target_include_directories(Default_test PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(Deque_test PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
 include(GoogleTest)
-gtest_discover_tests(Default_test)
-
+gtest_discover_tests(Deque_test)

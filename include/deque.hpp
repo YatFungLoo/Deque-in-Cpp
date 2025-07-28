@@ -1,6 +1,6 @@
 #include <iostream>
 
-class Example {
+class Deque {
   public:
     void Print();
 };

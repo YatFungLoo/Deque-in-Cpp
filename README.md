@@ -1,6 +1,10 @@
 # Deque (Deck) in C++
 Simple doubly-linked list implemenation in C++.
 
+## TODO
+
+1. add c++20 concepts
+
 ## To run the code
 
 ```bash

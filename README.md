@@ -7,22 +7,6 @@ Simple deque template class (doubly-linked list) implemenation in C++.
 ## Structure
 
 ```mermaid
-graph LR
-    subgraph Doubly Linked List
-        direction LR
-        Head[Left] <--next/prev--> A[Node]
-        A[Node] <--next/prev--> B[Node]
-        B[Node] <--next/prev--> Tail[Right]
-    end
-
-    %% Node Structure Details
-    subgraph Node Structure
-        direction TB
-        NODE["[ next | item | prev ]"]
-    end
-```
-
-```mermaid
 classDiagram
     class Node {
         +next: shared_ptr Node*
@@ -38,27 +22,79 @@ classDiagram
     Node <-- Deque : contains
 ````
 
-## functions
+```mermaid
+graph LR
+    subgraph Deque
+        direction LR
+        Head[Left] <--next/prev--> A[Node]
+        A[Node] <--next/prev--> B[Node]
+        B[Node] <--next/prev--> Tail[Right]
+    end
+```
 
-bool isEmpty() { return static_cast<bool>(N <= 0); }
+## API
 
-int size() { return N; }
+| Functions                      | Description                                      |
+|--------------------------------|--------------------------------------------------|
+| `bool isEmpty()`               | Returns `true` if the deque is empty, `false` otherwise. Uses `N <= 0` for check. |
+| `int size()`                   | Returns the current number of elements (`N`) in the deque. |
+| `void pushLeft(T item)`        | Inserts an element to the left side of the deque. |
+| `void pushRight(T item)`       | Inserts an element to the right side of the deque. |
+| `T popLeft()`                  | Removes and returns the leftmost item from the deque. |
+| `T popRight()`                 | Removes and returns the rightmost item from the deque. |
+| `T peekLeft()`                 | Returns the leftmost element without removing it. |
+| `T peekRight()`                | Returns the rightmost element without removing it. |
 
-void pushLeft(T item);
+## Example
 
-void pushRight(T item);
+```cpp
+#include "deque.hpp"
+#include <iostream>
+#include <ostream>
+#include <string>
 
-T popLeft();
+int main() {
+    Deque<std::string> myDeq;
 
-T popRight();
+    std::cout << "Deq " << (myDeq.isEmpty() ? "is " : "is not ") << "empty."
+              << '\n';
 
-T peekLeft();
+    myDeq.pushLeft("Hello");
+    myDeq.pushLeft("World");
+    myDeq.pushLeft("!");
 
-T peekRight();
+    myDeq.pushRight("saids");
+    myDeq.pushRight("John");
 
-## TODO
+    auto left_item = myDeq.peekLeft();
+    std::cout << "Left item: " << left_item << '\n';
+
+    auto right_item = myDeq.peekRight();
+    std::cout << "Right item: " << right_item << '\n';
+
+    std::cout << "Deque is now sized " << myDeq.size() << '\n';
+
+    while (!myDeq.isEmpty()) {
+        std::cout << myDeq.popLeft() << " ";
+    }
+    std::cout << '\n';
+}
+```
+
+Example output:
+
+```
+Deq is empty.
+Left item: !
+Right item: John
+Deque is now sized 5
+John saids Hello World !
+````
+
+#### TODO
 
 1. add c++20 concepts
+2. weak_ptr for safty
 
 ## To run the code
 

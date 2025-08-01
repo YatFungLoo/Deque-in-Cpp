@@ -1,5 +1,7 @@
 # Deque (Deck) in C++
 
+[![CMake on multiple platforms](https://github.com/YatFungLoo/Deque-in-Cpp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/YatFungLoo/Deque-in-Cpp/actions/workflows/cmake-multi-platform.yml)
+
 Simple deque template class (doubly-linked list) implemenation in C++.
 
 > C++ deque implements doubly-linked list using arry of array, which latter contains index of the next and prev

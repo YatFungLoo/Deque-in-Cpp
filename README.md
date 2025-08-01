@@ -1,6 +1,8 @@
 # Deque (Deck) in C++
 Simple doubly-linked list implemenation in C++.
 
+[![CMake on multiple platforms](https://github.com/YatFungLoo/Deque-in-Cpp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/YatFungLoo/Deque-in-Cpp/actions/workflows/cmake-multi-platform.yml)
+
 ## TODO
 
 1. add c++20 concepts

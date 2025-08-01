@@ -1,5 +1,60 @@
 # Deque (Deck) in C++
-Simple doubly-linked list implemenation in C++.
+
+Simple deque template class (doubly-linked list) implemenation in C++.
+
+> C++ deque implements doubly-linked list using arry of array, which latter contains index of the next and previous node.
+
+## Structure
+
+```mermaid
+graph LR
+    subgraph Doubly Linked List
+        direction LR
+        Head[Left] <--next/prev--> A[Node]
+        A[Node] <--next/prev--> B[Node]
+        B[Node] <--next/prev--> Tail[Right]
+    end
+
+    %% Node Structure Details
+    subgraph Node Structure
+        direction TB
+        NODE["[ next | item | prev ]"]
+    end
+```
+
+```mermaid
+classDiagram
+    class Node {
+        +next: shared_ptr Node*
+        +prev: share_ptr Node*
+        +data: template T
+    }
+    
+    class Deque {
+        +left: shared_ptr Node*
+        +right: shared_ptr Node*
+    }
+    
+    Node <-- Deque : contains
+````
+
+## functions
+
+bool isEmpty() { return static_cast<bool>(N <= 0); }
+
+int size() { return N; }
+
+void pushLeft(T item);
+
+void pushRight(T item);
+
+T popLeft();
+
+T popRight();
+
+T peekLeft();
+
+T peekRight();
 
 ## TODO
 

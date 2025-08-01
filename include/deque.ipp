@@ -28,6 +28,42 @@ template <typename T> void Deque<T>::pushRight(T item) {
     N++;
 }
 
+template <typename T> void Deque<T>::singleItemReset() {
+    left.reset();
+    right.reset();
+    N = 0;
+}
+
+template <typename T> T Deque<T>::popLeft() {
+    if (right == nullptr) {
+        throw std::runtime_error("Deque is empty");
+    }
+    auto ret = right->item;
+    if (left == right) {
+        singleItemReset();
+    } else {
+        right = right->next;
+        right->prev.reset();
+        N--;
+    }
+    return ret;
+}
+
+template <typename T> T Deque<T>::popRight() {
+    if (left == nullptr) {
+        throw std::runtime_error("Deque is empty");
+    }
+    auto ret = left->item;
+    if (left == right) {
+        singleItemReset();
+    } else {
+        left = left->prev;
+        left->next.reset();
+        N--;
+    }
+    return ret;
+}
+
 template <typename T> T Deque<T>::peekLeft() {
     if (left == nullptr) {
         throw std::out_of_range("Deque is empty");

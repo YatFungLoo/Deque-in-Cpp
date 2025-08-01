@@ -23,8 +23,8 @@ template <typename T> class Deque {
     int size() { return N; }
     void pushLeft(T item);
     void pushRight(T item);
-    T popLeft() {}
-    T popRight() {}
+    T popLeft();
+    T popRight();
     T peekLeft();
     T peekRight();
 
@@ -32,6 +32,8 @@ template <typename T> class Deque {
     std::shared_ptr<Node<T>> left = nullptr;
     std::shared_ptr<Node<T>> right = nullptr;
     int N = 0; // queue size
+
+    void singleItemReset();
 };
 
 #include "deque.ipp"

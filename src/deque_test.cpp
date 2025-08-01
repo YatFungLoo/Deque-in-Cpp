@@ -1,6 +1,7 @@
 #include "deque_test.hpp"
 #include "deque.hpp"
 #include <gtest/gtest.h>
+#include <stdexcept>
 
 class DequeTest : public ::testing::Test {
   protected:
@@ -58,4 +59,6 @@ TEST_F(DequeTest, PushOperationsWithStrings) {
 TEST_F(DequeTest, EmptyDequeBehavior) {
     EXPECT_THROW(intDeque.peekLeft(), std::out_of_range);
     EXPECT_THROW(intDeque.peekRight(), std::out_of_range);
+    EXPECT_THROW(intDeque.popLeft(), std::runtime_error);
+    EXPECT_THROW(intDeque.popRight(), std::runtime_error);
 }

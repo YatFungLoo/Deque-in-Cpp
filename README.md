@@ -2,7 +2,20 @@
 
 Simple deque template class (doubly-linked list) implemenation in C++.
 
-> C++ deque implements doubly-linked list using arry of array, which latter contains index of the next and previous node.
+> C++ deque implements doubly-linked list using arry of array, which latter contains index of the next and prev
+ious node.
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Deque (Deck) in C++](#deque-deck-in-c)
+  - [API](#api)
+  - [Example](#example)
+  - [Structure](#structure)
+    - [-](#-)
+  - [To run the code](#to-run-the-code)
+
+<!-- markdown-toc end -->
 
 ## API
 

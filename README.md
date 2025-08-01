@@ -50,7 +50,7 @@ int main() {
     myDeq.pushLeft("World");
     myDeq.pushLeft("!");
 
-    myDeq.pushRight("saids");
+    myDeq.pushRight("said");
     myDeq.pushRight("John");
 
     auto left_item = myDeq.peekLeft();
@@ -75,7 +75,7 @@ Deq is empty.
 Left item: !
 Right item: John
 Deque is now sized 5
-John saids Hello World !
+John said Hello World !
 ````
 
 ## Structure

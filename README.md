@@ -4,34 +4,6 @@ Simple deque template class (doubly-linked list) implemenation in C++.
 
 > C++ deque implements doubly-linked list using arry of array, which latter contains index of the next and previous node.
 
-## Structure
-
-```mermaid
-classDiagram
-    class Node {
-        +next: shared_ptr Node*
-        +prev: share_ptr Node*
-        +data: template T
-    }
-    
-    class Deque {
-        +left: shared_ptr Node*
-        +right: shared_ptr Node*
-    }
-    
-    Node <-- Deque : contains
-````
-
-```mermaid
-graph LR
-    subgraph Deque
-        direction LR
-        Head[Left] <--next/prev--> A[Node]
-        A[Node] <--next/prev--> B[Node]
-        B[Node] <--next/prev--> Tail[Right]
-    end
-```
-
 ## API
 
 | Functions                      | Description                                      |
@@ -91,10 +63,38 @@ Deque is now sized 5
 John saids Hello World !
 ````
 
+## Structure
+
+```mermaid
+classDiagram
+    class Node {
+        +next: shared_ptr Node*
+        +prev: share_ptr Node*
+        +data: template T
+    }
+    
+    class Deque {
+        +left: shared_ptr Node*
+        +right: shared_ptr Node*
+    }
+    
+    Node <-- Deque : contains
+````
+
+```mermaid
+graph LR
+    subgraph Deque
+        direction LR
+        Head[Left] <--next/prev--> A[Node]
+        A[Node] <--next/prev--> B[Node]
+        B[Node] <--next/prev--> Tail[Right]
+    end
+```
+
 #### TODO
 
-1. add c++20 concepts
-2. weak_ptr for safty
+1. add c++20 concepts.
+2. weak_ptr for safty.
 
 ## To run the code
 
